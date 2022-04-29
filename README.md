@@ -1,6 +1,24 @@
 # PP2-CeneoScraper
 
 ## Struktura opinii w serwisie
+    <table>
+        <thead>
+            <tr>
+                <th>Składowa opinii</th>
+                <th>Selektor </th>
+                <th>Nazwa zmiennej</th>
+                <th>Typ danych</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 |---------------------------|-----------------------------------------------------------------------------------|----------------------|-----------------|
 |      Składowa opinii      |           Selektor                                                                |    Nazwa zmiennej    |    Typ danych   |
 |---------------------------------------------------------------------------------------------------------------|----------------------|-----------------|
