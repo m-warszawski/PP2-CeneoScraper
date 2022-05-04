@@ -1,11 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-
 from soupsieve import select
 
-url = 'https://www.ceneo.pl/105186036#tab=reviews'
+print("=== Witaj w Ceneo Scraper! ===")
+id = input("Podaj ID produktu: ")
+url = 'https://www.ceneo.pl/' + id + '#tab=reviews'
+
 all_opinions = []
+opinions_count = 0
+print("Wyszukiwanie...")
 
 while(url):
     response = requests.get(url)
@@ -57,12 +61,19 @@ while(url):
             "purchased_date": purchased_date,
         }
         all_opinions.append(single_opinion)
+        opinions_count += 1
 
     try:
         url = 'https://www.ceneo.pl' + page_code.select_one("a.pagination__next")["href"]
     except TypeError:
         url = None
-            
-with open("opinions/29042022.json", "w", encoding="UTF-8") as json_file:
-    json.dump(all_opinions, json_file, indent=4, ensure_ascii=False)
+
+print(f"Znaleziono {opinions_count} opinii")
+print("Zapisywanie...")           
+try:            
+    with open("opinions/"+ id +".json", "w", encoding="UTF-8") as json_file:
+        json.dump(all_opinions, json_file, indent=4, ensure_ascii=False)
+    print(f"Zapisano do pliku :) ")
+except:
+    print("Napotkano błąd!")
 
