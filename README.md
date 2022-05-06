@@ -1,24 +1,6 @@
 # PP2-CeneoScraper
 
 ## Struktura opinii w serwisie
-    <table>
-        <thead>
-            <tr>
-                <th>Składowa opinii</th>
-                <th>Selektor </th>
-                <th>Nazwa zmiennej</th>
-                <th>Typ danych</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
 | Składowa opinii           |  Selektor                                                  | Nazwa zmiennej  | Typ danych |
 |:-------------------------:|:----------------------------------------------------------:|:---------------:|:----------:|
 | Opinia                    | div.js_product-review                                      | opinion         |            |
@@ -33,5 +15,4 @@
 | Dla ilu osób nieprzydatna | button.vote-no'['data-total-vote']                         | useless         |            |
 | Data wystawienia opinii   | span.user-post__published > time:nth-child(1)['datetime']  | published_date  |            |
 | Data zakupu produktu      | span.user-post__published > time:nth-child(2)'['datetime'] | purchased_date  |            |
-|                           |                                                            |                 |            |
 
