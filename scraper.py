@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-
+import os
 
 print("=== Witaj w Ceneo Scraper! ===")
 id = input("Podaj ID produktu: ")
@@ -46,6 +46,7 @@ while(url):
                 for key, value in selectors.items()
         }
         single_opinion["opinion_id"] =  opinion["data-entry-id"]
+        single_opinion["stars"] = (single_opinion["stars"].split('/')[0]).replace(",", ".")
         all_opinions.append(single_opinion)
         opinions_count += 1
 
@@ -55,7 +56,16 @@ while(url):
         url = None
 
 print(f"Znaleziono {opinions_count} opinii")
-print("Zapisywanie...")           
+print("Zapisywanie...")
+
+# Folder
+directory = "opinions"
+try:
+    os.stat(directory)
+except:
+    os.mkdir(directory)   
+
+# Zapis opinii        
 try:            
     with open(f"opinions/{id}.json", "w", encoding="UTF-8") as json_file:
         json.dump(all_opinions, json_file, indent=4, ensure_ascii=False)

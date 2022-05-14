@@ -26,3 +26,13 @@
     a. utworzenie funkcji do pobierania składowych strony HTML
     b. utworzenie słownika opisującego strukturę opinii wraz z selektorami poszczególnych elementów
     c. zamiana instrukcji pobierających składowe opinii do pojedynczych zmiennych tworzących z nich słowniik na wyrażenie słownikowe \(dictionary comprehension\) tworzące słownik reprezentujący pojedynczą opinię na podstawie słownika selektorów
+7. Analiza opinii o wybranym produkcie
+    1. Wszytanie wszystkich opinii o wsazanm produkcie do obiektu DataFrame
+    2. Wyliczenie podstawowych statystyk na podstawie opinii
+        1. Liczba wszystkich opinii o produkcie
+        2. Liczba opinii w których autor poadał listę zalet produktu
+        3. Liczba opinii w których autor podał listę wad produktu
+        4. Średnia ocen produktu
+    3. Przygotowanie wykresów na podstawie zawartości opinii
+        1. Udział poszczególnych rekomendacjii w ogólnej liczbie opinii
+        2. Histogram częstości występowania poszczególnych ocen (liczba gwiazdek)
